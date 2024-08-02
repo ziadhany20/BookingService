@@ -1,0 +1,57 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding : 1rem;
+    color: white;
+    
+    
+    
+  }
+  
+  .navbar-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .navbar-middle {
+    flex: 2;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .navbar-middle ul {
+    list-style: none;
+    display: flex;
+    font-weight: bold;
+  }
+  
+  .navbar-middle li {
+    margin: 0 1rem;
+    cursor: pointer;
+  }
+  
+  .navbar-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .register-button {
+    
+    color: white;
+    padding: 0.5rem 1rem;
+    border: 1px solid ;
+    cursor: pointer;
+    
+  }
+  .register-button{
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .logo{
+    color: white ;
+    width: 100px ;
+    height: auto ;
+  }

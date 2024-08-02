@@ -1,0 +1,32 @@
+.hh {
+
+    text-align: center;
+    font-size: 5rem; /* Adjust font size as needed */
+    position:absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, sans-serif; /* Replace with desired sans-serif font */
+   font-weight: 700; /* Adjust weight as needed */
+   color: #fff; /* White text */
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+}
+.para {
+
+    text-align: center;
+    font-size: 2rem; /* Adjust font size as needed */
+    position:absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, sans-serif; /* Replace with desired sans-serif font */
+   font-weight: 500; /* Adjust weight as needed */
+   color: #fff; /* White text */
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+   
+
+}
+
+
+
