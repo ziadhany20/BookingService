@@ -1,34 +1,84 @@
 .main {
-display: flex;
-justify-content:space-between ;
-
-}
-.content{
+    display: flex;
+    justify-content: space-between;
+   
+  }
+  
+  .content {
     color: white;
-    margin-left: 150px ;
-    width: 50% ;
-} 
-h3{
-font-size: 48px ;
-}
-.paraa{
-font-size: 22px;
-width: 90% ;
-margin-top: 20px ;
-margin-bottom: 20px ;
-flex: 1 ;
-}
-.btn{
+    margin-left: 150px;
+    width: 50%;
+  }
+  
+  h3 {
+    font-size: 48px;
+  }
+  
+  .paraa {
+    font-size: 22px;
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex: 1;
+  }
+  
+  .btn {
     background-color: #00000000;
     color: white;
-    padding: 1rem 2rem; /* Increase padding to make the button larger */
-    font-size: 1.5rem; /* Increase font size */
-    border: 2px solid; /* Make the border thicker */
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border: 2px solid;
     cursor: pointer;
+  }
+  
+  .imgg {
+    max-width: 35%;
+    height: auto;
+    margin-right: 150px;
+    border-radius: 10px;
+  }
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 90%;
+        text-align: center; /* Center align text for better presentation */
+    }
+
+    .imgg {
+        max-width: 90%;
+        margin-right: 0;
+        margin-bottom: 20px; /* Add margin below image for spacing */
+        margin-top: 20px;
+    }
+
+    .paraa {
+        width: 80%; /* Adjust width for smaller screens */
+        height: auto; /* Allow height to adjust based on content */
+        margin-left: 0;
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
 }
-.imgg{
-    max-width: 35%; 
-    height: auto; 
-    margin-right: 150px ;
-    border-radius: 10px ;
+
+@media (max-width: 480px) {
+    h3 {
+        font-size: 32px;
+    }
+
+    .paraa {
+        font-size: 18px;
+        width: 100%; /* Make the paragraph take full width */
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
 }

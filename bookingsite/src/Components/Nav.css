@@ -1,57 +1,101 @@
+/* General Styles */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding : 1rem;
-    color: white;
-    
-    
-    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: white;
+}
+
+.navbar-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar-middle {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar-middle ul {
+  list-style: none;
+  display: flex;
+  font-weight: bold;
+}
+
+.navbar-middle li {
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+.navbar-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.register-button {
+  color: white;
+  padding: 0.5rem 1rem;
+  border: 1px solid;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 0.9rem; /* Slightly smaller font size */
+}
+
+/* Logo Styles */
+.logo {
+  color: white;
+  width: 80px; /* Smaller width for logo */
+  height: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+      padding: 0.75rem;
   }
-  
-  .navbar-left {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  .navbar-middle {
-    flex: 2;
-    display: flex;
-    justify-content: space-around;
-  }
-  
+
   .navbar-middle ul {
-    list-style: none;
-    display: flex;
-    font-weight: bold;
+      font-size: 0.9rem; /* Smaller font size for nav items */
   }
-  
+
   .navbar-middle li {
-    margin: 0 1rem;
-    cursor: pointer;
+      margin: 0 0.5rem; /* Smaller margin for nav items */
   }
-  
-  .navbar-right {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
+
   .register-button {
-    
-    color: white;
-    padding: 0.5rem 1rem;
-    border: 1px solid ;
-    cursor: pointer;
-    
+      padding: 0.4rem 0.8rem; /* Adjust padding for smaller screens */
+      font-size: 0.8rem; /* Smaller font size for button */
   }
-  .register-button{
-    background-color: rgba(0, 0, 0, 0);
+
+  .logo {
+      width: 70px; /* Smaller logo for tablets */
   }
-  .logo{
-    color: white ;
-    width: 100px ;
-    height: auto ;
+}
+
+@media (max-width: 480px) {
+  .navbar {
+      padding: 0.5rem;
   }
+
+  .navbar-middle ul {
+      font-size: 0.8rem; /* Further reduce font size for nav items */
+  }
+
+  .navbar-middle li {
+      margin: 0 0.3rem; /* Further reduce margin for nav items */
+  }
+
+  .register-button {
+      padding: 0.3rem 0.6rem; /* Further adjust padding for mobile screens */
+      font-size: 0.7rem; /* Further reduce font size for button */
+  }
+
+  .logo {
+      width: 60px; /* Even smaller logo for mobile screens */
+  }
+}

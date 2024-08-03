@@ -1,17 +1,61 @@
-.part3{
-   color: white ;
+.part3 {
+   color: white;
 }
-.sec{
-   font-size: 60px ;
-   margin-top:120px ;
+
+.sec {
+   font-size: 60px;
+   margin-top: 120px;
    margin-left: 175px;
-   margin-bottom: 50px ;
-
-}
-.containerr{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 11%  ;
-    margin-right: 11% ;
+   margin-bottom: 50px;
+   text-align: left; /* Default alignment */
 }
 
+.containerr {
+   display: flex;
+   justify-content: space-between;
+   margin-left: 11%;
+   margin-right: 11%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+   .sec {
+       font-size: 50px; /* Adjust font size for tablets */
+       margin: 20px 5%; /* Adjust margin for tablets */
+       text-align: center; /* Center title */
+   }
+
+   .containerr {
+       flex-direction: column; /* Stack items vertically */
+       align-items: center; /* Center items */
+       margin: 0 5%; /* Adjust margin for tablets */
+   }
+
+   .containerr > div {
+       margin-bottom: 20px; /* Space between items */
+       width: 80%; /* Adjust card width for tablets */
+   }
+}
+
+@media (max-width: 480px) {
+   .sec {
+       font-size: 40px; /* Further adjust font size for mobile */
+       margin: 10px 5%; /* Adjust margin for mobile */
+       text-align: center; /* Center title */
+   }
+
+   .containerr {
+       margin: 0 5%; /* Adjust margin for mobile */
+   }
+
+   .containerr > div {
+       width: 90%; /* Adjust card width for mobile */
+       margin-bottom: 10px; /* Adjust spacing for mobile */
+       padding: 0 5%; /* Add padding to the cards */
+   }
+
+   .card { /* Assuming 'card' is the class of the individual Card component */
+       transform: scale(0.8); /* Further scale down the card */
+       margin-bottom: 15px; /* Add some margin to space out the cards */
+   }
+}

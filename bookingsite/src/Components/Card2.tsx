@@ -1,24 +1,60 @@
-import './Card2.css'
+"use client";
+import './Card2.css';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-import React from 'react'
-
-function Card( ) {
-  return (
-
-
-    <div className='Container '>
-        <div> 
-        <img className='cimg' src='https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'/>
-
-
-        <h4> Hilton Hotel <span className='old'> 1650 </span> <span className='pricee'> 1200$ </span>  </h4> 
-        <p className='loc'> Granary Wharf, 2 Wharf Approach, Leeds LS1 4BR, UK </p>
-        
-        <button className="btnc"> Read more </button>
-         </div>
-
-        </div>
-  )
+interface Package {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  isTopDeal: boolean;
+  discount: number;
+  imageUrl: string;
 }
 
-export default Card
+function Card2() {
+  const [packages, setPackages] = useState<Package[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchPackages = async () => {
+      try {
+        const response = await axios.post('https://europe-west6-service-booking-99250.cloudfunctions.net/getAllPackages');
+        setPackages(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError('Failed to fetch packages');
+        setLoading(false);
+      }
+    };
+
+    fetchPackages();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  return (
+    <div className='cards-container'>
+      {packages.map(pkg => (
+        <div className='Containerr' key={pkg.id}>
+          <img className='cimgg' src={pkg.imageUrl} alt={pkg.title} />
+          <h4 className='headingg'>
+            {pkg.title} <span className='old'>{pkg.price + (pkg.discount / 100) * pkg.price}</span> <span className='pricee'>{pkg.price}$</span>
+          </h4>
+          <p className='locc'>{pkg.description}</p>
+          <button className='btncc'>Read more</button>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Card2;

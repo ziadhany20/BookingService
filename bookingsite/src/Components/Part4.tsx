@@ -3,11 +3,11 @@ import Card from './Card'; // Make sure the path is correct
 import './Part4.css'
 import Card2 from './Card2';
 
-interface Part3Props {
+interface Part4Props {
   title: string;
 }
 
-const Part3: React.FC<Part3Props> = ({ title }) => {
+const Part3: React.FC<Part4Props> = ({ title }) => {
   return (
     <div className='part3'>
       <h1 className='sec'>{title}</h1>
