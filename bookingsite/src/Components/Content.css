@@ -1,0 +1,51 @@
+/* app/package/[id]/page.css */
+
+body {
+    background-color: black;
+    min-height: 150vh;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .loca {
+    color: rgb(255, 255, 255);
+    margin-left: 55px;
+    padding-left: 20px;
+    font-size: 28px;
+    font-weight: 300;
+    padding-right: 20px;
+    margin-bottom: 5px;
+    font-family: 'Open Sans', sans-serif; /* Apply the new font */
+  }
+  
+  .price {
+    color: white;
+    font-size: 28px; /* Increased font size */
+    font-weight: 600; /* Slightly increased font weight */
+    border: 1px solid;
+    padding: 8px 12px; /* Increased padding */
+    border-radius: 8px;
+    margin-left: 20px; /* Adjusted margin */
+    background-color: #346751;
+    border-color: #00000000;
+    margin-left: 1px;
+    font-family: 'Open Sans', sans-serif; /* Apply the new font */
+  }
+  
+  .cimg {
+    width: 500px;
+    height: auto;
+    border-radius: 8px 8px 0px 0px;
+  }
+  
+  .text {
+    font-size: 48px;
+    color: white;
+    margin-left: 10px;
+    font-family: 'Open Sans', sans-serif; /* Apply the new font */
+  }
+  
+  .Container {
+    margin-left: 20%;
+    margin-top: 50px;
+  }
+  

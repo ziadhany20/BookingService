@@ -4,6 +4,7 @@
 import './Card.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 interface Package {
   id: string;
@@ -19,6 +20,7 @@ const Card = () => {
   const [packages, setPackages] = useState<Package[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchPackages = async () => {
@@ -50,7 +52,9 @@ const Card = () => {
             {pkg.title} <span className='price'>{pkg.price}$</span>
           </h4>
           <p className='loc'>{pkg.description}</p>
-          <button className='btnc'>Read more</button>
+          <button className='btnc' onClick={() => router.push(`/details/${pkg.id}`)}>
+            Read more
+          </button>
         </div>
       ))}
     </div>
