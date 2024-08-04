@@ -10,7 +10,7 @@ function words () {
         A Piece Of Paradise
         Just For You
         </h1>
-        <p className='para'> Book entire houses, villas, cabins, and more
+        <p className='para'> Best message coaches, best prices, best locations.
 
 </p>
 

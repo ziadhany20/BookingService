@@ -8,15 +8,16 @@ import Part3 from "@/Components/Part3";
 import Part4 from "@/Components/Part4";
 import Fotter from "@/Components/Footer";
 import axios from "axios";
+import Part5 from "@/Components/Part5";
 
 export default function Home() {
   return (
     <div className="header">
       <Hero />
       <Parttwo/>
-      <Part3 title={" Top Deals "} />
+      <Part5 title={" Top Deals "}/>
+      <Part4 title={" Offers "}/>
       <Part3 title={" Packages "} />
-      <Part4 title={"Offers"}/>
       <Fotter/>
 
     </div>

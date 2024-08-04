@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Content.css'
+import getDirection from '@/Utils/utils';
 interface Package {
   id: string;
   title: string;
@@ -53,7 +54,9 @@ const Content: React.FC<ContentProps> = ({ id }) => {
   }
 
   return (
-    <div className='Container'>
+    <div className='Container' style={{
+      direction: getDirection(pkg.title)
+    }}>
       <div className='zoz'>
         <img className='cimg' src={pkg.imageUrl} alt={pkg.title} />
         <h4 className='text'>

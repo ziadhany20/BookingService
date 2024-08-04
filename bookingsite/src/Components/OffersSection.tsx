@@ -1,5 +1,5 @@
 "use client";
-import './Card2.css';
+import './AllPackagesSection.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -13,7 +13,7 @@ interface Package {
   imageUrl: string;
 }
 
-function Card2() {
+function OffersSection() {
   const [packages, setPackages] = useState<Package[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -21,7 +21,7 @@ function Card2() {
   useEffect(() => {
     const fetchPackages = async () => {
       try {
-        const response = await axios.post('https://europe-west6-service-booking-99250.cloudfunctions.net/getAllPackages');
+        const response = await axios.post('https://europe-west6-service-booking-99250.cloudfunctions.net/getDiscountedPackages');
         setPackages(response.data);
         setLoading(false);
       } catch (err) {
@@ -57,4 +57,4 @@ function Card2() {
   );
 }
 
-export default Card2;
+export default OffersSection;

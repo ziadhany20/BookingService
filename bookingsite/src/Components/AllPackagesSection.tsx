@@ -1,10 +1,11 @@
 // components/Card.tsx
 "use client";
 
-import './Card.css';
+import './AllPackagesSection.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import getDirection from '@/Utils/utils';
 
 interface Package {
   id: string;
@@ -16,11 +17,12 @@ interface Package {
   imageUrl: string;
 }
 
-const Card = () => {
+const AllPackagesSection = () => {
   const [packages, setPackages] = useState<Package[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
+
 
   useEffect(() => {
     const fetchPackages = async () => {
@@ -46,7 +48,9 @@ const Card = () => {
   return (
     <div className='cards-container'>
       {packages.map(pkg => (
-        <div className='Container' key={pkg.id}>
+        <div className='Container' key={pkg.id} style={{
+          direction: getDirection(pkg.title)
+        }}>
           <img className='cimg' src={pkg.imageUrl} alt={pkg.title} />
           <h4 className='heading'>
             {pkg.title} <span className='price'>{pkg.price}$</span>
@@ -61,4 +65,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default AllPackagesSection;

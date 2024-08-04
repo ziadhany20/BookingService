@@ -1,7 +1,6 @@
 import React from 'react';
-import AllPackagesSection from './AllPackagesSection'; // Make sure the path is correct
-import './Part4.css'
-import OffersSection from './OffersSection';
+import './Part5.css'
+import TopDealsSection from './TopDealsSection';
 
 interface Part4Props {
   title: string;
@@ -12,7 +11,7 @@ const Part3: React.FC<Part4Props> = ({ title }) => {
     <div className='part3'>
       <h1 className='sec'>{title}</h1>
       <div className='containerr'>
-        <OffersSection />
+        <TopDealsSection />
       </div>
     </div>
   );

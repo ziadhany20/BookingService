@@ -1,6 +1,6 @@
 import './parttwo.css' 
 import React from 'react'
-import Card from "@/Components/Card";
+import AllPackagesSection from "@/Components/AllPackagesSection";
 
 import About from '@/Components/About';
 
