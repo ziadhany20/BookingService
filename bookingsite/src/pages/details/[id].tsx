@@ -15,8 +15,9 @@ const PackageDetail = () => {
 
   return (
     <div className='page2-container'>
+      
       <Content id={id} />
-      <DarkForm/>
+      
      
     </div>
   );

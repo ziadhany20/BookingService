@@ -1,9 +1,10 @@
 /* app/package/[id]/page.css */
 .page2-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+   
+    
     padding: 20px;
+    margin-right: 20%;
 }
 
 /* Flex items will take equal space */
@@ -14,7 +15,7 @@
 /* Styling for the form */
 .dark-form {
     max-width: 400px; /* Adjust width if needed */
-    margin-right: 20%;
+    
 }
 
 /* Responsive adjustments */

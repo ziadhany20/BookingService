@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Content.css'
 import getDirection from '@/Utils/utils';
+import DarkForm from './DarkForm';
 interface Package {
   id: string;
   title: string;
@@ -59,12 +60,19 @@ const Content: React.FC<ContentProps> = ({ id }) => {
     }}>
       <div className='zoz'>
         <img className='cimg' src={pkg.imageUrl} alt={pkg.title} />
+        <div className="wordss"> 
         <h4 className='text'>
           {pkg.title} <span className='price'>{pkg.price}$</span>
         </h4>
         <p className='loca'>{pkg.description}</p>
+        <DarkForm/>
       </div>
+     
+        </div>
+       
+        
     </div>
+    
   );
 };
 
