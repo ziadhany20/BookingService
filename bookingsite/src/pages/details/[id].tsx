@@ -1,7 +1,6 @@
 // pages/details/[id].tsx
 import { useRouter } from 'next/router';
 import Content from '../../Components/Content';
-import DarkForm from '@/Components/DarkForm';
 import './[id].css'
 
 
