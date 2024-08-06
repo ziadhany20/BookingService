@@ -1,6 +1,10 @@
 import React from 'react';
 import styles from './BottomSheet.module.css';
 import './BottomSheet.css';
+import phoneIcon from '../assets/ic_phone.svg';
+import Image from 'next/image';
+import Link from 'next/link';
+
 
 type BottomSheetProps = {
   isOpen: boolean;
@@ -8,22 +12,21 @@ type BottomSheetProps = {
   phoneNumbers: string[];
 };
 
-const phoneIconUrl = 'path/to/your/photo.png'; // Replace with the actual path to your photo
-
 const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, phoneNumbers }) => {
   return (
     <div className={`${styles.overlay} ${isOpen ? styles.show : ''}`} onClick={onClose}>
       <div className={styles.bottomSheet} onClick={(e) => e.stopPropagation()}>
-        <div className={styles.phoneNumbers}>
+        <div>
           <p className="conus">Reach Us</p>
           {phoneNumbers.map((number, index) => (
-            <a key={index} href={`tel:${number}`} className={styles.phoneNumber}>
-              <img src={phoneIconUrl} alt="Phone icon" className={styles.phoneIcon} />
+            <Link key={index} href={`tel:${number}`} className={styles.phoneNumberCard}>
+              {/* <img src={phoneIcon} alt="Phone Icon" className={styles.phoneIcon} /> */}
+              <Image src={phoneIcon} alt="Phone Icon" className={styles.phoneIcon} />
               <div className={styles.numberAndText}>
-                <span>{number}</span>
+                <span className={styles.phoneNumber}>{number}</span>
                 <p className={styles.dis}>click to call</p>
               </div>
-            </a>
+            </Link >
           ))}
         </div>
       </div>

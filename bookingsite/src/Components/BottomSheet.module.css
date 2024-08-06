@@ -6,10 +6,11 @@
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
     display: none;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: end;
     z-index: 1000;
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
   }
   
   .overlay.show {
@@ -17,14 +18,17 @@
   }
   
   .bottomSheet {
+    display: flex;
+    flex-direction: column;
     background: white;
-    width: 100%;
-    max-height: 80%;
+    width: 90%;
+    overflow: hidden;
+    max-height: 70%;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     padding: 20px;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-    position: relative;
+    position: absolute;
   }
   
   .closeButton {
@@ -36,25 +40,23 @@
     font-size: 1.5rem;
   }
   
-  .phoneNumbers {
+  .phoneNumberCard {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    position: relative;
     align-items: center;
-  
+    justify-content: center;
+    background: whitesmoke;
+    margin: 20px;
+    padding-top: 15px;
+    border-radius: 20px;
+    text-decoration: none;
   }
   
   .phoneNumber {
-    color: #000000;
+    color: #1C274C;
     text-decoration: none;
     font-size: 1.5rem;
-    border: 0px solid;
-    background-color: rgb(238, 236, 236);
-    padding: 20px 900px;
-    border-radius: 8px;
-    margin: 0px;
-    display: flex;
-    align-items: center; /* Center the icon vertically */
     font-weight: bold ;
   }
   
@@ -64,24 +66,34 @@
   }
   
   .phoneIcon {
-    margin-right: 10px; /* Space between the icon and the phone number */
+    margin: 10px; /* Space between the icon and the phone number */
+    justify-self: start
   }
   .dis{
     font-size: 15px;
     display: flex;
-    align-items: center;
-   
+    align-self: center;
+    color: #1C274C;
+    text-decoration: none;
   }
  
   .phoneIcon {
-    width: 24px; /* Adjust width to match the size of your icon */
-    height: 24px; /* Adjust height to match the size of your icon */
-    margin-right: 10px; /* Space between the icon and the phone number */
+    width: 44px; /* Adjust width to match the size of your icon */
+    height: 44px; /* Adjust height to match the size of your icon */
+    margin: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
   }
   .numberAndText{
     display: flex;
+    flex-direction: column;
+    color: #1C274C;
     align-items: center;
-    
+    justify-content: center;
+    text-decoration: none;
+    align-self: center;
   }
   
   
