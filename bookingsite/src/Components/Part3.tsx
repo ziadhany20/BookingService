@@ -8,7 +8,7 @@ interface Part3Props {
 
 const Part3: React.FC<Part3Props> = ({ title }) => {
   return (
-    <div className='part3'>
+    <div className='part3' id='packages'>
       <h1 className='sec'>{title}</h1>
       <div className='containerr'>
         <AllPackagesSection />

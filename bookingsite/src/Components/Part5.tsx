@@ -8,7 +8,7 @@ interface Part4Props {
 
 const Part3: React.FC<Part4Props> = ({ title }) => {
   return (
-    <div className='part3'>
+    <div className='part3' id='topdeals'>
       <h1 className='sec'>{title}</h1>
       <div className='containerr'>
         <TopDealsSection />

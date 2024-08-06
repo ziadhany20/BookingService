@@ -5,6 +5,7 @@ import './AllPackagesSection.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import getDirection from '@/Utils/utils';
 
 interface Package {
   id: string;
@@ -46,7 +47,9 @@ const TopDealsSection = () => {
   return (
     <div className='cards-container'>
       {packages.map(pkg => (
-        <div className='Container' key={pkg.id}>
+        <div className='Container' key={pkg.id} style={{
+          direction: getDirection(pkg.title)
+        }}>
           <img className='cimg' src={pkg.imageUrl} alt={pkg.title} />
           <h4 className='heading'>
             {pkg.title} <span className='price'>{pkg.price}$</span>

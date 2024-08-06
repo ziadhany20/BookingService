@@ -1,17 +1,17 @@
 import React from 'react';
 import './Footer.css';
+import Link from 'next/link';
 
 const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="footer-section">
         <h2 className="footer-title">About Us</h2>
-        <p className="footer-text">Lorem ipsum dolor sit amet.</p>
+        <p className="footer-text">City Message</p>
       </div>
       <div className="footer-section">
-        <h2 className="footer-title">Contact</h2>
-        <p className="footer-text">Email: info@example.com</p>
-        <p className="footer-text">Phone: +123 456 7890</p>
+        <h2 className="footer-title">Contact For Website Creation</h2>
+        <Link href={'mailto:brightbytes@proton.me'} className="footer-text">Email: brightbytes@proton.me</Link>
       </div>
       <div className="footer-section">
         <h2 className="footer-title">Follow Us</h2>

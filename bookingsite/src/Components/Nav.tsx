@@ -1,6 +1,7 @@
 import React from 'react';
 import './Nav.css';
 import booke from '../app/booke.png'; // Import the image file
+import Link from 'next/link';
 
 interface NavbarProps {
   logoSrc: string; // Replace with your image type if needed
@@ -10,17 +11,17 @@ const Navbar: React.FC<NavbarProps> = ({ logoSrc }) => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <img className='logo' src = "https://www.cdnlogo.com/logos/h/13/honeybook.svg"  alt="Your Logo" />
+        <img className='logo' src={logoSrc} alt="Your Logo" />
       </div>
       <div className="navbar-middle">
         <ul>
-          <li>Top Deals</li>
-          <li>Offers</li>
-          <li>Packages</li>
+          <Link href={'#topdeals'} style={{textDecoration: 'none', margin: '10px', color: 'white'}}>Top Deals</Link>
+          <Link href={'#offers'} style={{textDecoration: 'none', margin: '10px', color: 'white'}}>Offers</Link>
+          <Link href={'#packages'} style={{textDecoration: 'none', margin: '10px', color: 'white'}}>Packages</Link>
         </ul>
       </div>
       <div className="navbar-right">
-        <button className="register-button">Register</button>
+        {/* <button className="register-button">Register</button> */}
       </div>
     </nav>
   );

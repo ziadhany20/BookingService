@@ -2,6 +2,7 @@
 import './AllPackagesSection.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import getDirection from '@/Utils/utils';
 
 interface Package {
   id: string;
@@ -44,7 +45,9 @@ function OffersSection() {
   return (
     <div className='cards-container'>
       {packages.map(pkg => (
-        <div className='Containerr' key={pkg.id}>
+        <div className='Containerr' key={pkg.id} style={{
+          direction: getDirection(pkg.title)
+        }}>
           <img className='cimgg' src={pkg.imageUrl} alt={pkg.title} />
           <h4 className='headingg'>
             {pkg.title} <span className='old'>{pkg.price + (pkg.discount / 100) * pkg.price}</span> <span className='pricee'>{pkg.price}$</span>
