@@ -8,12 +8,12 @@
     ],
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "destination": "/details/[id].html",
+        "regex": "^/details/([^/]+?)(?:/)?$"
       },
       {
-        "source": "/details/**",
-        "destination": "/details/[id]/index.html"
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   }
