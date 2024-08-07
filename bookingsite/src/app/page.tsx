@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="header">
       <Hero />
-      <Parttwo/>
+      {/* <Parttwo/> */}
       <Part5 title={" Top Deals "}/>
       <Part4 title={" Offers "}/>
       <Part3 title={" Packages "} />

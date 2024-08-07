@@ -10,9 +10,9 @@ function words () {
         A Piece Of Paradise
         Just For You
         </h1>
-        <p className='para'> Best message coaches, best prices, best locations.
+        {/* <p className='para'> Best message coaches, best prices, best locations.
 
-</p>
+</p> */}
 
     </div>
   )

@@ -6,11 +6,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 
-type BottomSheetProps = {
+interface BottomSheetProps {
+
   isOpen: boolean;
+
   onClose: () => void;
+
   phoneNumbers: string[];
-};
+
+  children: React.ReactNode;
+
+}
 
 const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, phoneNumbers }) => {
   return (
