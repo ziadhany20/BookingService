@@ -4,7 +4,7 @@ import Part3 from "@/Components/Part3";
 import Part4 from "@/Components/Part4";
 import Fotter from "@/Components/Footer";
 import Part5 from "@/Components/Part5";
-
+import "../i18n"
 export default function Home() {
   return (
     <div className="header">
