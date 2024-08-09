@@ -1,39 +1,41 @@
 /* app/package/[id]/page.css */
 .page2-container {
     display: flex;
-    width: 100%;
+    width: 80%;
     padding: 20px;
-    margin-right: 20%;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Flex items will take equal space */
 .page2-container > * {
     flex: 1;
+    border: 2px wheat;
 }
 
 /* Styling for the form */
 .dark-form {
-    max-width: 400px; /* Adjust width if needed */
-    
+    max-width: 400px; /* Adjust width if needed */    
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .page2-container {
+        width: 100%;
         flex-direction: column;
         align-items: center;
-        padding: 10px;
+        padding: 5px;
         margin: 0 auto; /* Center the container */
     }
     
     .page2-container > * {
         flex: none; /* Reset flex property */
         margin-bottom: 20px; /* Add space between items */
-        width: 95%;
+        width: 100%;
     }
     
     .dark-form {
-        max-width: 95%; /* Make the form larger */
+        max-width: 100%; /* Make the form larger */
         margin: 0 auto; /* Center the form */
     }
 }

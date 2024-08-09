@@ -58,6 +58,9 @@ const DarkForm: React.FC = () => {
         {isSubmitting ? 'Submitting...' : 'Reserve'}
       </button>
 
+      <div style={{height: '150px'}}>
+      </div>
+
       <BottomSheet isOpen={isBottomSheetOpen} onClose={closeBottomSheet} phoneNumbers={phoneNumbers}>
         <form className='dark-form' onSubmit={handleSubmit}>
           <div className='form-group'>
