@@ -22,7 +22,7 @@ function OffersSection() {
   useEffect(() => {
     const fetchPackages = async () => {
       try {
-        const response = await axios.post('https://europe-west6-service-booking-99250.cloudfunctions.net/getDiscountedPackages');
+        const response = await axios.post('https://europe-west6-e-vape-pro.cloudfunctions.net/getDiscountedPackages');
         setPackages(response.data);
         setLoading(false);
       } catch (err) {

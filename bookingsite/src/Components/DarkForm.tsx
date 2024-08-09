@@ -19,7 +19,7 @@ const DarkForm: React.FC = () => {
     setSuccess(null);
 
     try {
-      const response = await fetch('https://europe-west6-service-booking-99250.cloudfunctions.net/createOrder', {
+      const response = await fetch('https://europe-west6-e-vape-pro.cloudfunctions.net/createOrder', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

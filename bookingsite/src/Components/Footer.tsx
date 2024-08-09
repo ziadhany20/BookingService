@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
     <footer className="footer">
       <div className="footer-section">
         <h2 className="footer-title">About Us</h2>
-        <p className="footer-text">City Message</p>
+        <p className="footer-text">E-Vape Pro</p>
       </div>
       <div className="footer-section">
         <h2 className="footer-title">Contact For Website Creation</h2>

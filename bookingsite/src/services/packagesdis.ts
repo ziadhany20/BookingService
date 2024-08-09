@@ -1,7 +1,7 @@
 // lib/api.ts
 import axios from 'axios';
 
-const sec_URL = 'https://europe-west6-service-booking-99250.cloudfunctions.net/getDiscountedPackages';
+const sec_URL = 'https://europe-west6-e-vape-pro.cloudfunctions.net/getDiscountedPackages';
 
 // Original function name
 export const getDiscountedPackages = async () => {

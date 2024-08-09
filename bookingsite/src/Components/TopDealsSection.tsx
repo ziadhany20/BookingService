@@ -27,7 +27,7 @@ const TopDealsSection = () => {
     const fetchPackages = async () => {
       try {
         const response = await axios.post(
-          'https://europe-west6-service-booking-99250.cloudfunctions.net/getTopDeals'
+          'https://europe-west6-e-vape-pro.cloudfunctions.net/getTopDeals'
         );
         setPackages(response.data);
       } catch (err) {

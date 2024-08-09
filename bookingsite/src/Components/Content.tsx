@@ -28,7 +28,7 @@ const Content: React.FC<ContentProps> = ({ id }) => {
     const fetchPackage = async () => {
       try {
         const response = await axios.post(
-          'https://europe-west6-service-booking-99250.cloudfunctions.net/getPackage',
+          'https://europe-west6-e-vape-pro.cloudfunctions.net/getPackage',
           { id }
         );
         setPkg(response.data);

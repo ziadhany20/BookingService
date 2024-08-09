@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "City Message",
-  description: "Relax and enjoy",
+  title: "E-Vape Pro",
+  description: "Best High Quality Vape, Liquid",
 };
 
 export default function RootLayout({

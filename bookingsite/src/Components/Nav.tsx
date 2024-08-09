@@ -15,9 +15,9 @@ const Navbar: React.FC<NavbarProps> = ({ logoSrc }) => {
       </div>
       <div className="navbar-middle">
         <ul>
-          <Link href={'#topdeals'} style={{textDecoration: 'none', margin: '10px', color: 'white'}}>Top Deals</Link>
-          <Link href={'#offers'} style={{textDecoration: 'none', margin: '10px', color: 'white'}}>Offers</Link>
-          <Link href={'#packages'} style={{textDecoration: 'none', margin: '10px', color: 'white'}}>Packages</Link>
+          <Link href={'#topdeals'} style={{textDecoration: 'none', margin: '10px', color: 'black'}}>Top Deals</Link>
+          <Link href={'#offers'} style={{textDecoration: 'none', margin: '10px', color: 'black'}}>Offers</Link>
+          <Link href={'#packages'} style={{textDecoration: 'none', margin: '10px', color: 'black'}}>Packages</Link>
         </ul>
       </div>
       <div className="navbar-right">

@@ -28,7 +28,7 @@ const AllPackagesSection = () => {
     const fetchPackages = async () => {
       try {
         const response = await axios.post(
-          'https://europe-west6-service-booking-99250.cloudfunctions.net/getAllPackages'
+          'https://europe-west6-e-vape-pro.cloudfunctions.net/getAllPackages'
         );
         setPackages(response.data);
       } catch (err) {
