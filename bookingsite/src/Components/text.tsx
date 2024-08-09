@@ -1,15 +1,14 @@
 import React from 'react'
 import './text.css';
-import { useTranslation } from 'react-i18next';
-import '../i18n';
 
 function words () {
-  const { t, i18n } = useTranslation();
+     
   return (
     
     <div className='main'>
         <h1 className='hh'>
-        {t ('hh')}
+        A Piece Of Paradise
+        Just For You
         </h1>
         {/* <p className='para'> Best message coaches, best prices, best locations.
 
