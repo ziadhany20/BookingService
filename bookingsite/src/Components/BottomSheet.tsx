@@ -49,7 +49,7 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, phoneNumbers
             </Link>
             <div className={styles.numberAndText}>
               <span className={styles.phoneNumber}>{number}</span>
-              <p className={styles.dis}>click to call</p>
+              <p className={styles.dis}>Click For Fall Or Whatsapp Chat</p>
             </div>
           </div>
         ))}
