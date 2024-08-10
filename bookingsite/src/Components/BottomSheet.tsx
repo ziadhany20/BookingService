@@ -41,15 +41,17 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, phoneNumbers
         </div>
         {phoneNumbers.map((number, index) => (
           <div className={styles.phoneNumberCard} key={index}>
-            <Link href={`tel:${number}`} passHref>
-              <Image src={phoneIcon} alt="Phone Icon" className={styles.phoneIcon} />
-            </Link>
-            <Link href="#" onClick={() => openDialog(number)} passHref>
-              <Image src={whatsappIcon} alt="WhatsApp Icon" className={styles.whatsappIcon} />
-            </Link>
+            <div className={styles.actions}>
+              <Link href={`tel:${number}`} passHref>
+                <Image src={phoneIcon} alt="Phone Icon" className={styles.phoneIcon} />
+              </Link>
+              <Link href="#" onClick={() => openDialog(number)} passHref>
+                <Image src={whatsappIcon} alt="WhatsApp Icon" className={styles.whatsappIcon} />
+              </Link>
+            </div>
             <div className={styles.numberAndText}>
               <span className={styles.phoneNumber}>{number}</span>
-              <p className={styles.dis}>Click For Fall Or Whatsapp Chat</p>
+              <p className={styles.dis}>Click For Call Or Whatsapp Chat</p>
             </div>
           </div>
         ))}

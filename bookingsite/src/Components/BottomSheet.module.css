@@ -26,9 +26,8 @@
     max-height: 70%;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
-    padding: 20px;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-    position: absolute;
+    position: relative;
     overflow-y: auto;
     scrollbar-width: none;
     animation: appear 0.3s ease-in-out forwards;
@@ -65,6 +64,7 @@
   
   .phoneNumberCard {
     display: flex;
+    height: auto;
     flex-direction: row;
     position: relative;
     align-items: center;
@@ -72,6 +72,7 @@
     background: whitesmoke;
     margin: 20px;
     padding-top: 15px;
+    padding-bottom: 15px;
     border-radius: 20px;
     text-decoration: none;
   }
@@ -90,10 +91,9 @@
   
   .phoneIcon {
     margin: 10px; /* Space between the icon and the phone number */
-    justify-self: start;
-   
-    
+    justify-self: start;  
   }
+
   .dis{
     font-size: 15px;
     display: flex;
@@ -102,18 +102,7 @@
     text-decoration: none;
   }
  
-  .phoneIcon {
-    width: 44px; /* Adjust width to match the size of your icon */
-    height: 44px; /* Adjust height to match the size of your icon */
-    margin: 20px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    
-    
-   
-  }
+
   .numberAndText{
     display: flex;
     flex-direction: column;
@@ -123,17 +112,24 @@
     text-decoration: none;
     align-self: center;
   }
-  
+  .phoneIcon {
+    width: 44px; /* Adjust width to match the size of your icon */
+    height: 44px; /* Adjust height to match the size of your icon */
+    margin: 5px;
+
+  }
   .whatsappIcon{
     width: 44px; /* Adjust width to match the size of your icon */
     height: 44px; /* Adjust height to match the size of your icon */
-    margin: 20px;
+    margin: 5px;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
     position: absolute;
+    margin-left: 20px;
     left: 0;
-    top: 0;
-    bottom: 0;
-    margin-left: 70px;
-    
   }
   /* BottomSheet.module.css */
 
@@ -239,7 +235,8 @@
   }
 
   .phoneNumberCard {
-    margin: 10px; /* Reduce margins for smaller screens */
+    margin-top: 10px; /* Reduce margins for smaller screens */
+    margin-bottom: 10px;
   }
 
  
@@ -262,5 +259,22 @@
 
   .conus {
     font-size: 20px; /* Reduce font size of the heading */
+  }
+
+  .phoneNumber{
+    font-size: medium;
+  }
+  .actions{
+    scale: 0.7;
+    margin: 0px;
+  }
+
+  .dis{
+    font-size: 15px;
+    display: flex;
+    align-self: center;
+    color: #1C274C;
+    text-decoration: none;
+    font-size: x-small;
   }
 }
