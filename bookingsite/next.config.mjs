@@ -1,12 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     distDir: 'build',
-    output: 'export',
     trailingSlash: false,
     reactStrictMode: true,
+    output: 'export',
     images: {
         loader: 'akamai',
         path: '',
+        unoptimized: true,
     },
     
 };
