@@ -6,6 +6,9 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import getDirection from '@/Utils/utils';
+import { logEvent } from "firebase/analytics";
+import { analytics } from '../app/layout';
+
 
 interface Package {
   id: string;
@@ -45,6 +48,18 @@ const AllPackagesSection = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
+  function handleClick(pkg: Package) {
+
+    logEvent(analytics, 'package_click', {
+      content_type: 'package',
+      content_id: pkg.id,
+      content_name: pkg.title,
+      value: pkg.price
+    });
+
+    router.push(`/details/${pkg.id}`)
+  }
+
   return (
     <div className='cards-container'>
       {packages.map(pkg => (
@@ -56,7 +71,7 @@ const AllPackagesSection = () => {
             {pkg.title} <span className='price'>{pkg.price}$</span>
           </h4>
           <p className='loc'>{pkg.description}</p>
-          <button className='btnc' onClick={() => router.push(`/details/${pkg.id}`)}>
+          <button className='btnc' onClick={() => handleClick(pkg)}>
             Read more
           </button>
         </div>
