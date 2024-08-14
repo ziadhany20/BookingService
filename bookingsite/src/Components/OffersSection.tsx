@@ -3,8 +3,9 @@ import './AllPackagesSection.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import getDirection from '@/Utils/utils';
-import { logEvent } from "firebase/analytics";
+import { getAnalytics, logEvent } from "firebase/analytics";
 import { useRouter } from 'next/navigation';
+import { firebaseapp } from '@/app/layout';
 
 interface Package {
   id: string;
@@ -46,12 +47,12 @@ function OffersSection() {
   }
 
   function handleClick(pkg: Package) {
-    // logEvent(analytics, 'offer_click', {
-    //   content_type: 'package',
-    //   content_id: pkg.id,
-    //   content_name: pkg.title,
-    //   value: pkg.price
-    // });
+    logEvent(getAnalytics(firebaseapp), 'select_offer', {
+      content_type: 'package',
+      content_id: pkg.id,
+      content_name: pkg.title,
+      value: pkg.price,
+    });
 
     router.push(`/details/${pkg.id}`);
   }

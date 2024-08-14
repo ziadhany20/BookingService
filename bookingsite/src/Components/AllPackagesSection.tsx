@@ -6,7 +6,10 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import getDirection from '@/Utils/utils';
-import { logEvent } from "firebase/analytics";
+import firebase from 'firebase/compat/app';
+import { firebaseapp } from '@/app/layout';
+import { getAnalytics, logEvent } from 'firebase/analytics';
+
 
 
 interface Package {
@@ -48,13 +51,12 @@ const AllPackagesSection = () => {
   if (error) return <p>{error}</p>;
 
   function handleClick(pkg: Package) {
-
-    // logEvent(analytics, 'package_click', {
-    //   content_type: 'package',
-    //   content_id: pkg.id,
-    //   content_name: pkg.title,
-    //   value: pkg.price
-    // });
+    logEvent(getAnalytics(firebaseapp), 'select_package', {
+      content_type: 'package',
+      content_id: pkg.id,
+      content_name: pkg.title,
+      value: pkg.price,
+    });
 
     router.push(`/details/${pkg.id}`)
   }

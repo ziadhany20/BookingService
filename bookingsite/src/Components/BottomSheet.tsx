@@ -4,6 +4,8 @@ import phoneIcon from '/public/assets/ic_phone.svg';
 import whatsappIcon from '/public/assets/ic_whatsapp.svg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getAnalytics, logEvent } from 'firebase/analytics';
+import { firebaseapp } from '@/app/layout';
 
 interface BottomSheetProps {
   isOpen: boolean;
@@ -27,11 +29,22 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, phoneNumbers
   const closeDialog = () => setIsDialogOpen(false);
 
   const handleWhatsAppClick = () => {
+
+    logEvent(getAnalytics(firebaseapp), 'click_whatsapp', {
+      phone_number: selectedNumber,
+    });
+
     const message = `Hello, I would like to make a reservation on ${date} at ${time} for ${numberOfPeople} people.`;
     const url = `https://wa.me/+2${selectedNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
     closeDialog();
   };
+
+  function handlePhoneCallClick(): void {
+    logEvent(getAnalytics(firebaseapp), 'click_phone', {
+      phone_number: selectedNumber,
+    });
+  }
 
   return (
     <div className={`${styles.overlay} ${isOpen ? styles.show : ''}`} onClick={onClose}>
@@ -42,7 +55,7 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose, phoneNumbers
         {phoneNumbers.map((number, index) => (
           <div className={styles.phoneNumberCard} key={index}>
             <div className={styles.actions}>
-              <Link href={`tel:${number}`} passHref>
+              <Link href={`tel:${number}`} passHref onClick={() => handlePhoneCallClick()}>
                 <Image src={phoneIcon} alt="Phone Icon" className={styles.phoneIcon} />
               </Link>
               <Link href="#" onClick={() => openDialog(number)} passHref>

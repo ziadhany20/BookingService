@@ -1,4 +1,3 @@
-// pages/details/[id].tsx
 import { useRouter } from 'next/router';
 import Content from '../../Components/Content';
 import './[id].css'
