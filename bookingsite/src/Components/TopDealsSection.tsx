@@ -7,7 +7,6 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import getDirection from '@/Utils/utils';
 import { logEvent } from "firebase/analytics";
-import { analytics } from '../app/layout';
 
 interface Package {
   id: string;
@@ -48,12 +47,12 @@ const TopDealsSection = () => {
 
   function handleClick(pkg: Package) {
 
-    logEvent(analytics, 'topdeal_click', {
-      content_type: 'package',
-      content_id: pkg.id,
-      content_name: pkg.title,
-      value: pkg.price
-    });
+    // logEvent(analytics, 'topdeal_click', {
+    //   content_type: 'package',
+    //   content_id: pkg.id,
+    //   content_name: pkg.title,
+    //   value: pkg.price
+    // });
 
     router.push(`/details/${pkg.id}`);
   }

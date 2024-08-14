@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import getDirection from '@/Utils/utils';
 import { logEvent } from "firebase/analytics";
-import { analytics } from '../app/layout';
 import { useRouter } from 'next/navigation';
 
 interface Package {
@@ -47,12 +46,12 @@ function OffersSection() {
   }
 
   function handleClick(pkg: Package) {
-    logEvent(analytics, 'offer_click', {
-      content_type: 'package',
-      content_id: pkg.id,
-      content_name: pkg.title,
-      value: pkg.price
-    });
+    // logEvent(analytics, 'offer_click', {
+    //   content_type: 'package',
+    //   content_id: pkg.id,
+    //   content_name: pkg.title,
+    //   value: pkg.price
+    // });
 
     router.push(`/details/${pkg.id}`);
   }
