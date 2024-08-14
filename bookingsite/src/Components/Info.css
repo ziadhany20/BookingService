@@ -1,0 +1,18 @@
+.information{
+  align-items: center;
+    color: white;
+    margin-top: 20px;
+}
+.branches-details{
+    text-align: end ;
+    font-size: 20px ;
+    padding-right: 10px ;
+    width: 100%;
+    text-align: center;
+}
+.fro3na{
+    font-weight: bold;
+}
+.head{
+font-weight: 600;
+}

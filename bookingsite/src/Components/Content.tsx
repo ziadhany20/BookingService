@@ -1,10 +1,12 @@
-// components/Content.tsx
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './Content.css'
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+import './Content.css';
 import getDirection from '@/Utils/utils';
 import DarkForm from './DarkForm';
 import Head from 'next/head';
+
 interface Package {
   id: string;
   title: string;
@@ -44,7 +46,21 @@ const Content: React.FC<ContentProps> = ({ id }) => {
   }, [id]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="Container">
+        <div className="zoz">
+          <Skeleton height={300} width={300} className="cimg"  />
+          <div className="wordss">
+            <h4 className="text">
+              <Skeleton width={200} />
+            </h4>
+            <p className="loca">
+              <Skeleton count={3} />
+            </p>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   if (error) {
@@ -58,32 +74,26 @@ const Content: React.FC<ContentProps> = ({ id }) => {
   return (
     <>
       <Head>
-        <title>{pkg?.title ?? "Loading..."}</title>
-        <meta name="description" content={pkg?.description ?? "Loading..."} />
-        <meta property="og:title" content={pkg?.title ?? "Loading..."} />
-        <meta property="og:description" content={pkg?.description ?? "Loading..."} />
-        <meta property="og:image" content={pkg?.imageUrl ?? "Loading..."} />
+        <title>{pkg?.title ?? 'Loading...'}</title>
+        <meta name="description" content={pkg?.description ?? 'Loading...'} />
+        <meta property="og:title" content={pkg?.title ?? 'Loading...'} />
+        <meta property="og:description" content={pkg?.description ?? 'Loading...'} />
+        <meta property="og:image" content={pkg?.imageUrl ?? 'Loading...'} />
       </Head>
-      <div className='Container' style={{
-        direction: getDirection(pkg.title)
-      }}>
-        <div className='zoz'>
-          <img className='cimg' src={pkg.imageUrl} alt={pkg.title} />
+      <div className="Container" style={{ direction: getDirection(pkg.title) }}>
+        <div className="zoz">
+          <img className="cimg" src={pkg.imageUrl} alt={pkg.title} />
           <div className="wordss">
-            <h4 className='text'>
-              {pkg.title} <span className='price'>{pkg.price}$</span>
+            <h4 className="text">
+              {pkg.title} <span className="price">{pkg.price}$</span>
             </h4>
-            <p className='loca'>{pkg.description}</p>
+            <p className="loca">{pkg.description}</p>
             <DarkForm />
           </div>
-
         </div>
-
-
       </div>
     </>
   );
 };
-
 
 export default Content;
