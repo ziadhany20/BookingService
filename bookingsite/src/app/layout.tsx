@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { FirebaseApp, initializeApp } from "firebase/app";
@@ -27,8 +26,6 @@ if (typeof window !== "undefined") {
     getAnalytics(firebaseapp);
   }
 }
-
-
 
 
 export default function RootLayout({

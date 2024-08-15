@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import getDirection from '@/Utils/utils';
-import firebase from 'firebase/compat/app';
 import { firebaseapp } from '@/app/layout';
 import { getAnalytics, logEvent } from 'firebase/analytics';
 
