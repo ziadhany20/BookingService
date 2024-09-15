@@ -6,6 +6,7 @@ import Part5 from "@/Components/Part5";
 import Info from "@/Components/Info";
 
 
+
 export default function Home() {
   return (
     <div className="header">

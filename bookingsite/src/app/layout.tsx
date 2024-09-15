@@ -1,10 +1,6 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { FirebaseApp, initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-
-const inter = Inter({ subsets: ["latin"] });
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyAUgmNM4kGbZl7fnbM_TwCq_LmekXnVIFk",
@@ -16,7 +12,7 @@ const firebaseConfig = {
   measurementId: "G-HNZKEVFPBQ"
 };
 
-export let firebaseapp: FirebaseApp; 
+export let firebaseapp: FirebaseApp;
 // Initialize Firebase
 if (typeof window !== "undefined") {
   firebaseapp = initializeApp(firebaseConfig);
@@ -27,7 +23,6 @@ if (typeof window !== "undefined") {
   }
 }
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -35,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
