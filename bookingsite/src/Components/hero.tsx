@@ -1,16 +1,20 @@
-"use client";
-import React from 'react';
-import Navbar from "@/Components/Nav";
+"use client"
+import React from 'react'
+import Nav from "@/Components/Nav";
 import Words from "@/Components/text";
 import './hero.css';
 
-function Hero() {
+function Hero () {
   return (
-    <div className="hero">
-      <Navbar logoSrc="/assets/logo.png" /> {/* Update with the correct path to the logo */}
-      <Words />
+    
+    <div className='hero'> 
+      <Nav logoSrc={''}  />
+      <Words/>
     </div>
-  );
+    
+   
+    
+  )
 }
 
-export default Hero;
+export default  Hero 
