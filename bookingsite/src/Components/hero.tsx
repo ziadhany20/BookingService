@@ -12,8 +12,6 @@ function Hero () {
       <Words/>
     </div>
     
-   
-    
   )
 }
 
