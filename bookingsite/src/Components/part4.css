@@ -1,0 +1,83 @@
+/* Card.css */
+
+.cards-container {
+    width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px; /* Adjust spacing between cards */
+      justify-content: start; /* Center the cards */
+    }
+    
+    .cimg {
+      width: 100%;
+      height: 370px !important;
+      object-fit: cover;
+      border-radius: 8px 8px 0px 0px;
+    }
+    
+    .heading {
+      color: white;
+      margin-top: 8px;
+      margin: 10px;
+      font-size: 32px;
+    }
+    
+    .loc {
+      color: white;
+      margin-left: 12px;
+      padding-left: 20px;
+      font-size: 18px;
+      font-weight: 300;
+      padding-right: 20px;
+      margin-bottom: 5px;
+      height: 100%;
+    }
+    
+    .Container {
+      border: 3px solid;
+      border-radius: 8px;
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: #131313;
+      border-color: #191919;
+      padding: 10px; /* Add padding inside each card */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow to each card */
+      transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+    }
+    
+    .price {
+      color: white;
+      font-size: medium;
+      font-weight: 400;
+      font-size: 22px;
+      border: 1px solid;
+      padding: 4px;
+      border-radius: 8px;
+      background-color: #346751;
+      border-color: #00000000;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    
+    .btnc {
+      background-color: #00000000;
+      width: 100%;
+      color: white;
+      padding: 1rem 6rem; /* Increase padding to make the button larger */
+      font-size: 1.5rem; /* Increase font size */
+      border: 1px solid; /* Make the border thicker */
+      cursor: pointer;
+      margin-top: 15px;
+      margin-bottom: 20px;
+      border-color: #ffffff;
+      border-radius: 8px;
+      align-self: center;
+    }
+    
+    .Container:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    

@@ -1,5 +1,5 @@
 "use client";
-import './AllPackagesSection.css';
+import './AllPackagesSection.css'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import getDirection from '@/Utils/utils';
