@@ -5,8 +5,7 @@ import axios from 'axios';
 import getDirection from '@/Utils/utils';
 import { getAnalytics, logEvent } from "firebase/analytics";
 import { useRouter } from 'next/navigation';
-import { firebaseapp } from '@/app/layout';
-
+import { firebaseapp } from '../firebase'; // Adjust the path as needed
 interface Package {
   id: string;
   title: string;

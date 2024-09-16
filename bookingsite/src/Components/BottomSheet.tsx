@@ -5,7 +5,7 @@ import whatsappIcon from '/public/assets/ic_whatsapp.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getAnalytics, logEvent } from 'firebase/analytics';
-import { firebaseapp } from '@/app/layout';
+import { firebaseapp } from '../firebase'; // Adjust the path as needed
 
 interface BottomSheetProps {
   isOpen: boolean;

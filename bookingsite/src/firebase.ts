@@ -11,15 +11,13 @@ const firebaseConfig = {
   measurementId: "G-HNZKEVFPBQ"
 };
 
-// Declare a variable to hold FirebaseApp
 let firebaseapp: FirebaseApp | undefined;
 
-// Initialize Firebase only in the browser environment
 export const initFirebase = (): FirebaseApp | undefined => {
   if (typeof window !== "undefined" && !firebaseapp) {
     firebaseapp = initializeApp(firebaseConfig);
 
-    // Enable analytics if measurementId is present
+    // Enable analytics if measurementId is available
     if ("measurementId" in firebaseConfig) {
       getAnalytics(firebaseapp);
     }

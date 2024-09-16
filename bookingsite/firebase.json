@@ -1,21 +1,14 @@
 {
   "hosting": {
-    "site": "oriantel-spa",
-    "public": "public",
+    "site" : "oriantel-spa",
+    "source": ".",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      {
-        "destination": "/details/[id].html",
-        "regex": "^/details/([^/]+?)(?:/)?$"
-      },
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
+    "frameworksBackend": {
+      "region": "europe-west1"
+    }
   }
 }

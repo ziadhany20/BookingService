@@ -8,7 +8,7 @@ function Hero () {
   return (
     
     <div className='hero'> 
-      <Nav logoSrc={'../../assets/logo.png'}  />
+      <Nav logoSrc={'../../assets/logo.PNG'}  />
       <Words/>
     </div>
     

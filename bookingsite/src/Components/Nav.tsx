@@ -2,6 +2,7 @@
 import React from 'react';
 import './Nav.css';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 interface NavbarProps {
@@ -12,7 +13,7 @@ const Navbar: React.FC<NavbarProps> = ({ logoSrc }) => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <img className="logo" src={logoSrc} alt="Your Logo" /> 
+        <Image className="logo" src={logoSrc} alt="Your Logo" /> 
       </div>
       <div className="navbar-middle">
         <ul>

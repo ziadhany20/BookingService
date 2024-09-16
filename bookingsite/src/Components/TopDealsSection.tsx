@@ -8,8 +8,7 @@ import { useRouter } from 'next/navigation';
 import getDirection from '@/Utils/utils';
 import { getAnalytics, logEvent } from "firebase/analytics";
 import firebase from 'firebase/compat/app';
-import { firebaseapp } from '@/app/layout';
-
+import { firebaseapp } from '../firebase'; // Adjust the path as needed
 interface Package {
   id: string;
   title: string;

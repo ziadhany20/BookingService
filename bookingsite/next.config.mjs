@@ -9,7 +9,6 @@ const nextConfig = {
         path: '',
         unoptimized: true,
     },
-    
 };
 
 export default nextConfig;
