@@ -1,17 +1,20 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
 body {
   background-color: black;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Cairo', sans-serif;
 }
 
 .loca {
   color: rgb(255, 255, 255);
   
-  width: 90%;
+  width: 100%;
   font-size: 28px;
   font-weight: 300;
  
   margin: 25px;
-  font-family: 'Open Sans', sans-serif; /* Apply the new font */
+  font-family: 'Cairo', sans-serif; /* Apply the new font */
 }
 
 .price {
@@ -25,6 +28,7 @@ body {
   border-color: #00000000;
   margin-left: 1px;
   font-family: 'Open Sans', sans-serif; /* Apply the new font */
+  font-family: 'Cairo', sans-serif;
 }
 
 .cimg {
@@ -39,22 +43,25 @@ body {
   font-size: 48px;
   color: white;
   margin: 25px;
-  font-family: 'Open Sans', sans-serif; /* Apply the new font */
-}
+  font-family: 'Cairo', sans-serif;}
 
 .Container {
-  margin-left: 25%;
+ 
   margin-top: 50px;
-  margin-right: 25% ;
+ 
+  font-family: 'Cairo', sans-serif;
 }
 .zoz{
   display: flex ;
-  justify-content: space-around ;
+  justify-content: space-between;
+  font-family: 'Cairo', sans-serif;
+  margin-left: 10%;
   
 }
 .wordss{
   margin-right: 30px;
   width: 100%;
+  font-family: 'Cairo', sans-serif;
 }
 
 @media (max-width: 768px) {

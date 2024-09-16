@@ -1,41 +1,20 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
-import { FirebaseApp, initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { ReactNode } from "react";
+import { initFirebase } from "../firebase";
 
-const inter = Inter({ subsets: ["latin"] });
-
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAUgmNM4kGbZl7fnbM_TwCq_LmekXnVIFk",
-  authDomain: "service-booking-99250.firebaseapp.com",
-  projectId: "service-booking-99250",
-  storageBucket: "service-booking-99250.appspot.com",
-  messagingSenderId: "97339256947",
-  appId: "1:97339256947:web:940aaeee7c70ca189c7a06",
-  measurementId: "G-HNZKEVFPBQ"
-};
-
-export let firebaseapp: FirebaseApp; 
-// Initialize Firebase
+// Initialize Firebase when the component is rendered (in client-side)
 if (typeof window !== "undefined") {
-  firebaseapp = initializeApp(firebaseConfig);
-
-  // to enable analytics
-  if ("measurementId" in firebaseConfig) {
-    getAnalytics(firebaseapp);
-  }
+  initFirebase();
 }
-
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

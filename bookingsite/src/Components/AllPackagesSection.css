@@ -9,10 +9,10 @@
   }
   
   .cimg {
-    width: 100%;
-    height: 370px !important;
-    object-fit: cover;
-    border-radius: 8px 8px 0px 0px;
+  width: 100%;
+  height: 370px !important;
+  object-fit: cover;
+  border-radius: 8px;
   }
   
   .heading {
@@ -30,21 +30,23 @@
     font-weight: 300;
     padding-right: 20px;
     margin-bottom: 5px;
-    height: 100%;
   }
   
   .Container {
     border: 3px solid;
     border-radius: 8px;
-    width: 350px;
+    width: 100%; /* Make the card take up the full space of the grid column */
+    max-width: 350px; /* Optional: Limit the maximum width of a card */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #131313;
     border-color: #191919;
-    padding: 10px; /* Add padding inside each card */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow to each card */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-height: 900px;
+    
   }
   
   .price {
@@ -80,4 +82,7 @@
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
-  
+  .old {
+    text-decoration: line-through;
+    color: rgb(165, 0, 0);
+  }
