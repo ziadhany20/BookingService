@@ -1,5 +1,5 @@
 import React from 'react';
-import './Part5.css'
+import './part5.css'
 import TopDealsSection from './TopDealsSection';
 
 interface Part4Props {

@@ -9,7 +9,7 @@ body {
 .loca {
   color: rgb(255, 255, 255);
   
-  width: 90%;
+  width: 100%;
   font-size: 28px;
   font-weight: 300;
  
@@ -46,15 +46,16 @@ body {
   font-family: 'Cairo', sans-serif;}
 
 .Container {
-  margin-left: 25%;
+ 
   margin-top: 50px;
-  margin-right: 25% ;
+ 
   font-family: 'Cairo', sans-serif;
 }
 .zoz{
   display: flex ;
-  justify-content: space-around ;
+  justify-content: space-between;
   font-family: 'Cairo', sans-serif;
+  margin-left: 10%;
   
 }
 .wordss{

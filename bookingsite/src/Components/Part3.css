@@ -16,7 +16,11 @@
    justify-content: space-between;
    margin-left: 11%;
    margin-right: 11%;
-   
+}
+.cards-container{
+    display: flex ;
+    justify-content: center ;
+    align-items: center;
 }
 
 /* Responsive Styles */
