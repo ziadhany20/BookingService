@@ -1,12 +1,12 @@
-
 "use client";
-import './AllPackagesSection.css'
-import React, { useEffect, useState } from 'react';
+import './AllPackagesSection.css';
+import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import getDirection from '@/Utils/utils';
 import { getAnalytics, logEvent } from "firebase/analytics";
 import { useRouter } from 'next/navigation';
-import { firebaseapp } from '../firebase'; // Adjust the path as needed
+import { initFirebase, firebaseapp } from '../firebase'; // Ensure the path is correct
+
 interface Package {
   id: string;
   title: string;
@@ -22,11 +22,16 @@ function OffersSection() {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
-  
+
   useEffect(() => {
+    // Ensure Firebase is initialized before using any Firebase-related functions
+    initFirebase();
+
     const fetchPackages = async () => {
       try {
-        const response = await axios.post('https://europe-west6-service-booking-99250.cloudfunctions.net/getDiscountedPackages');
+        const response = await axios.post(
+          'https://europe-west6-service-booking-99250.cloudfunctions.net/getDiscountedPackages'
+        );
         setPackages(response.data);
         setLoading(false);
       } catch (err) {
@@ -38,6 +43,22 @@ function OffersSection() {
     fetchPackages();
   }, []);
 
+  const handleClick = useCallback((pkg: Package) => {
+    // Ensure that Firebase Analytics is properly initialized
+    const analytics = getAnalytics(firebaseapp);
+
+    // Log the event to Firebase Analytics
+    logEvent(analytics, 'select_offer', {
+      content_type: 'package',
+      content_id: pkg.id,
+      content_name: pkg.title,
+      value: pkg.price,
+    });
+
+    // Navigate to the package details page
+    router.push(`/details/${pkg.id}`);
+  }, [router]);
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -46,26 +67,23 @@ function OffersSection() {
     return <div>{error}</div>;
   }
 
-  function handleClick(pkg: Package) {
-    logEvent(getAnalytics(firebaseapp), 'select_offer', {
-      content_type: 'package',
-      content_id: pkg.id,
-      content_name: pkg.title,
-      value: pkg.price,
-    });
-
-    router.push(`/details/${pkg.id}`);
-  }
-
   return (
     <div className='cards-container'>
-      {packages.map(pkg => (
-        <div className='Container' key={pkg.id} style={{
-          direction: getDirection(pkg.title)
-        }}>
-          <img className='cimgg' src={pkg.imageUrl} alt={pkg.title} />
+      {packages.map((pkg) => (
+        <div
+          className='Container'
+          key={pkg.id}
+          style={{
+            direction: getDirection(pkg.title),
+          }}
+        >
+          <img className='cimg' src={pkg.imageUrl} alt={pkg.title} />
           <h4 className='heading'>
-            {pkg.title} <span className='old'>{pkg.price + (pkg.discount / 100) * pkg.price}</span> <span className='price'>{pkg.price}$</span>
+            {pkg.title}{' '}
+            <span className='old'>
+              {((pkg.price / (1 - pkg.discount / 100))).toFixed(2)}$
+            </span>{' '}
+            <span className='price'>{pkg.price}$</span>
           </h4>
           <p className='loc'>{pkg.description}</p>
           <button className='btnc' onClick={() => handleClick(pkg)}>

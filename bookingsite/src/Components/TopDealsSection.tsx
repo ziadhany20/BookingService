@@ -47,14 +47,14 @@ const TopDealsSection = () => {
   if (error) return <p>{error}</p>;
 
   function handleClick(pkg: Package) {
-
-    logEvent(getAnalytics(firebaseapp), 'select_topdeal', {
+    const analytics = getAnalytics(firebaseapp);
+    logEvent(analytics, 'select_topdeal', {
       content_type: 'package',
       content_id: pkg.id,
       content_name: pkg.title,
       value: pkg.price,
     });
-
+  
     router.push(`/details/${pkg.id}`);
   }
 
