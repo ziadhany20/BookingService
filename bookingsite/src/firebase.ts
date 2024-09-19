@@ -1,5 +1,6 @@
-import { FirebaseApp, initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+// firebase.ts
+import { initializeApp, FirebaseApp } from "firebase/app";
+import { getAnalytics, Analytics } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAUgmNM4kGbZl7fnbM_TwCq_LmekXnVIFk",
@@ -11,18 +12,21 @@ const firebaseConfig = {
   measurementId: "G-HNZKEVFPBQ"
 };
 
-let firebaseapp: FirebaseApp | undefined;
+// Initialize Firebase globally once
+let firebaseApp: FirebaseApp | undefined;
+let analytics: Analytics | undefined;
 
-export const initFirebase = (): FirebaseApp | undefined => {
-  if (typeof window !== "undefined" && !firebaseapp) {
-    firebaseapp = initializeApp(firebaseConfig);
-
-    // Enable analytics if measurementId is available
-    if ("measurementId" in firebaseConfig) {
-      getAnalytics(firebaseapp);
+const initFirebase = (): { app: FirebaseApp, analytics: Analytics | undefined } => {
+  if (!firebaseApp) {
+    firebaseApp = initializeApp(firebaseConfig);
+    if (typeof window !== "undefined") {
+      analytics = getAnalytics(firebaseApp); // Initialize analytics if on client-side
     }
   }
-  return firebaseapp;
+  return { app: firebaseApp, analytics };
 };
 
-export { firebaseapp };
+// Initialize Firebase and export app and analytics
+const { app, analytics: firebaseAnalytics } = initFirebase();
+
+export { app as firebaseapp, firebaseAnalytics as analytics, initFirebase };

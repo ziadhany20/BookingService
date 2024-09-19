@@ -1,7 +1,7 @@
 import React from 'react'
 import './text.css';
 import Image from 'next/image';
-import logo from '../../public/assets/logo.png';
+import logo from '../../public/assets/logo2.png';
 
 function words () {
      

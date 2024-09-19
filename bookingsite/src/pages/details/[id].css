@@ -1,21 +1,26 @@
 /* app/package/[id]/page.css */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
 .page2-container {
     display: flex;
     width: 80%;
     padding: 20px;
     align-items: center;
     justify-content: center;
+    font-family: 'Cairo', sans-serif;
 }
 
 /* Flex items will take equal space */
 .page2-container > * {
     flex: 1;
     border: 2px wheat;
+    font-family: 'Cairo', sans-serif;
 }
 
 /* Styling for the form */
 .dark-form {
-    max-width: 400px; /* Adjust width if needed */    
+    max-width: 400px; /* Adjust width if needed */  
+    font-family: 'Cairo', sans-serif;  
 }
 
 /* Responsive adjustments */
@@ -26,16 +31,19 @@
         align-items: center;
         padding: 5px;
         margin: 0 auto; /* Center the container */
+        font-family: 'Cairo', sans-serif;
     }
     
     .page2-container > * {
         flex: none; /* Reset flex property */
         margin-bottom: 20px; /* Add space between items */
         width: 100%;
+        font-family: 'Cairo', sans-serif;
     }
     
     .dark-form {
         max-width: 100%; /* Make the form larger */
         margin: 0 auto; /* Center the form */
+        font-family: 'Cairo', sans-serif;
     }
 }

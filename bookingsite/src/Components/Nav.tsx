@@ -3,17 +3,13 @@ import React from 'react';
 import './Nav.css';
 import Link from 'next/link';
 import Image from 'next/image';
+import logo from '../../public/assets/logo2.png'
 
-
-interface NavbarProps {
-  logoSrc: string;
-}
-
-const Navbar: React.FC<NavbarProps> = ({ logoSrc }) => {
+const Navbar: React.FC = ({  }) => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <Image className="logo" src={logoSrc} alt="Your Logo" /> 
+        <Image className="logo" src={logo} alt="Your Logo"  width={90} height={90} /> 
       </div>
       <div className="navbar-middle">
         <ul>
