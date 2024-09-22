@@ -64,10 +64,11 @@ const TopDealsSection = () => {
         <div className='Container' key={pkg.id} style={{
           direction: getDirection(pkg.title)
         }}>
-          <img className='cimgg' src={pkg.imageUrl} alt={pkg.title} />
+          <img className='cimg' src={pkg.imageUrl} alt={pkg.title} />
           <h4 className='heading'>
-            {pkg.title} <span className='price'>{pkg.price}$</span>
+            {pkg.title} 
           </h4>
+          <span className='price'>{pkg.price} EGP</span>
           <p className='loc'>{pkg.description}</p>
           <button className='btnc' onClick={() => handleClick(pkg)}>
             Read more

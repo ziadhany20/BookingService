@@ -9,17 +9,18 @@
   }
   
   .cimg {
-  width: 100%;
-  height: 370px !important;
-  object-fit: cover;
-  border-radius: 8px;
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* Cover the area while maintaining aspect ratio */
+    border-radius: 8px;
   }
   
   .heading {
     color: white;
     margin-top: 8px;
     margin: 10px;
-    font-size: 32px;
+    font-size: 25px;
+    width: 100%;
   }
   
   .loc {
@@ -30,13 +31,19 @@
     font-weight: 300;
     padding-right: 20px;
     margin-bottom: 5px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    line-height: 1.5em; /* Adjust line height as needed */
+    max-height: 4.5em; /* Adjust max height based on line-height */
   }
   
   .Container {
     border: 3px solid;
     border-radius: 8px;
     width: 100%; /* Make the card take up the full space of the grid column */
-    max-width: 350px; /* Optional: Limit the maximum width of a card */
+    max-width: 360px; /* Optional: Limit the maximum width of a card */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -45,7 +52,8 @@
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
-    min-height: 900px;
+   
+    
     
   }
   
@@ -61,6 +69,13 @@
     border-color: #00000000;
     padding-top: 0px;
     padding-bottom: 0px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    margin-bottom: 5px;
+
   }
   
   .btnc {
@@ -85,4 +100,7 @@
   .old {
     text-decoration: line-through;
     color: rgb(165, 0, 0);
+    margin-right: 28px;
+    margin-bottom: 5px;
+    font-size: 18px;
   }

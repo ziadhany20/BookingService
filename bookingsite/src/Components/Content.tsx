@@ -46,22 +46,27 @@ const Content: React.FC<ContentProps> = ({ id }) => {
   }, [id]);
 
   if (loading) {
-    return (
-      <div className="Container">
-        <div className="zoz">
-          <Skeleton height={300} width={300} className="cimg"  />
-          <div className="wordss">
-            <h4 className="text">
-              <Skeleton width={200} />
-            </h4>
-            <p className="loca">
-              <Skeleton count={3} />
-            </p>
-          </div>
+  return (
+    <div className="Container">
+      <div className="zoz">
+        
+        
+        <div className="wordss" style={{ textAlign: 'right' }}>
+          <Skeleton height={40} width={200} style={{ marginBottom: '15px' }} />
+          <Skeleton count={3} height={28} style={{ marginBottom: '10px' }} />
+          <Skeleton height={50} width={100} />
+        </div>
+        <div className="skeleton-image">
+          <Skeleton height={370} width={320} style={{ borderRadius: '8px' }} />
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
+
+  
+  
+  
 
   if (error) {
     return <div>{error}</div>;
@@ -73,19 +78,19 @@ const Content: React.FC<ContentProps> = ({ id }) => {
 
   return (
     <>
-      <Head>
-        <title>{pkg?.title ?? 'Loading...'}</title>
-        <meta name="description" content={pkg?.description ?? 'Loading...'} />
-        <meta property="og:title" content={pkg?.title ?? 'Loading...'} />
-        <meta property="og:description" content={pkg?.description ?? 'Loading...'} />
-        <meta property="og:image" content={pkg?.imageUrl ?? 'Loading...'} />
+      <Head >
+        <title >{pkg.title}</title>
+        <meta name="description" content={pkg.description} />
+        <meta property="og:title" content={pkg.title} />
+        <meta property="og:description" content={pkg.description} />
+        <meta property="og:image" content={pkg.imageUrl} />
       </Head>
       <div className="Container" style={{ direction: getDirection(pkg.title) }}>
         <div className="zoz">
           <img className="cimg" src={pkg.imageUrl} alt={pkg.title} />
           <div className="wordss">
             <h4 className="text">
-              {pkg.title} <span className="price">{pkg.price}$</span>
+              {pkg.title} <span className="price">{pkg.price} EGP</span>
             </h4>
             <p className="loca">{pkg.description}</p>
             <DarkForm />

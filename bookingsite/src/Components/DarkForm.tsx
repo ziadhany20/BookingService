@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import BottomSheet from './BottomSheet';
 import './DarkForm.css';
 
@@ -10,7 +10,7 @@ const DarkForm: React.FC = () => {
   const [success, setSuccess] = useState<string | null>(null);
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
 
-  const phoneNumbers = ['01211115269', '01122431668', '01010102148', '01201809998', '01032944852', '01152670717', '01113863006' ];
+  const phoneNumbers = ['01211115269', '01122431668', '01010102148', '01201809998', '01032944852', '01152670717', '01113863006'];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,7 +32,6 @@ const DarkForm: React.FC = () => {
       }
 
       const data = await response.json();
-
       setSuccess('Order created successfully!');
       setName('');
       setPhone('');
@@ -52,14 +51,25 @@ const DarkForm: React.FC = () => {
     setIsBottomSheetOpen(false);
   };
 
+  useEffect(() => {
+    if (isBottomSheetOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isBottomSheetOpen]);
+
   return (
     <>
       <button onClick={openBottomSheet}>
         {isSubmitting ? 'Submitting...' : 'Reserve'}
       </button>
 
-      <div style={{height: '150px'}}>
-      </div>
+      <div style={{ height: '150px' }}></div>
 
       <BottomSheet isOpen={isBottomSheetOpen} onClose={closeBottomSheet} phoneNumbers={phoneNumbers}>
         <form className='dark-form' onSubmit={handleSubmit}>

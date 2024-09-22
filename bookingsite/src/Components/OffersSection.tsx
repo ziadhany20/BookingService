@@ -80,11 +80,13 @@ function OffersSection() {
           <img className='cimg' src={pkg.imageUrl} alt={pkg.title} />
           <h4 className='heading'>
             {pkg.title}{' '}
-            <span className='old'>
-              {((pkg.price / (1 - pkg.discount / 100))).toFixed(2)}$
-            </span>{' '}
-            <span className='price'>{pkg.price}$</span>
+            
           </h4>
+          
+          <span className='old'>
+              {((pkg.price / (1 - pkg.discount / 100))).toFixed(2)} EGP</span>{' '}
+            <span  className='price'>{pkg.price} EGP </span>
+            
           <p className='loc'>{pkg.description}</p>
           <button className='btnc' onClick={() => handleClick(pkg)}>
             Read more

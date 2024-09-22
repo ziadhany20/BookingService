@@ -7,8 +7,7 @@ const Footer: React.FC = () => {
     <footer className="footer">
       <div className="footer-section">
         <h2 className="footer-title">About Us</h2>
-        <p className="footer-text">Rakan Massage</p>
-      </div>
+        <Link href={'https://www.facebook.com/profile.php?id=61553588310297&mibextid=LQQJ4d'} className="footer-text"> Facebook </Link>      </div>
       <div className="footer-section">
         <h2 className="footer-title">Contact For Website Creation</h2>
         <Link href={'mailto:brightbytes@proton.me'} className="footer-text">Email: brightbytes@proton.me</Link>

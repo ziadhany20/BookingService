@@ -9,8 +9,6 @@ import getDirection from '@/Utils/utils';
 import { firebaseapp } from '../firebase'; // Adjust the path as needed
 import { getAnalytics, logEvent } from 'firebase/analytics';
 
-
-
 interface Package {
   id: string;
   title: string;
@@ -26,7 +24,6 @@ const AllPackagesSection = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
-
 
   useEffect(() => {
     const fetchPackages = async () => {
@@ -57,8 +54,13 @@ const AllPackagesSection = () => {
       value: pkg.price,
     });
 
-    router.push(`/details/${pkg.id}`)
+    router.push(`/details/${pkg.id}`);
   }
+
+  const limitDescription = (description: string, lineLimit: number) => {
+    const lines = description.split('\n');
+    return lines.slice(0, lineLimit).join('\n') + (lines.length > lineLimit ? '...' : '');
+  };
 
   return (
     <div className='cards-container'>
@@ -66,11 +68,14 @@ const AllPackagesSection = () => {
         <div className='Container' key={pkg.id} style={{
           direction: getDirection(pkg.title)
         }}>
-          <img className='cimgg' src={pkg.imageUrl} alt={pkg.title} />
+          <img className='cimg' src={pkg.imageUrl} alt={pkg.title} />
           <h4 className='heading'>
-            {pkg.title} <span className='price'>{pkg.price}$</span>
+            {pkg.title} 
           </h4>
-          <p className='loc'>{pkg.description}</p>
+          <span className='price'>{pkg.price} EGP</span>
+          <p className='loc'>
+            {limitDescription(pkg.description, 3)} {/* Limit to 3 lines */}
+          </p>
           <button className='btnc' onClick={() => handleClick(pkg)}>
             Read more
           </button>
